@@ -1,0 +1,23 @@
+name: Deploy to Pantheon
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.PANTHEON_SSH_PRIVATE_KEY }}
+
+      - name: Deploy to Pantheon
+        run: |
+          git remote add pantheon ssh://codeserver.dev.b3be6131-89a1-4aac-9342-ee0bc9148f2f@codeserver.dev.b3be6131-89a1-4aac-9342-ee0bc9148f2f.drush.in:2222/~/repository.git
+          git push pantheon master --force
