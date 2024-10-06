@@ -17,6 +17,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.PANTHEON_SSH_PRIVATE_KEY }}
 
+      - name: Add Pantheon to known_hosts
+        run: |
+          ssh-keyscan -H codeserver.dev.b3be6131-89a1-4aac-9342-ee0bc9148f2f.drush.in >> ~/.ssh/known_hosts
+
       - name: Deploy to Pantheon
         run: |
           git remote add pantheon ssh://codeserver.dev.b3be6131-89a1-4aac-9342-ee0bc9148f2f@codeserver.dev.b3be6131-89a1-4aac-9342-ee0bc9148f2f.drush.in:2222/~/repository.git
