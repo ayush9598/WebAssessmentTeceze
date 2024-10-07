@@ -7,12 +7,94 @@
 
 use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\file\Entity\File;
+use Drupal\Core\Url;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * Implements hook_preprocess_paragraph().
  */
-function optifast_preprocess_paragraph(&$variables)
-{
+function teceze_preprocess_paragraph(&$variables) {
+  // For logo to come in menu array. blank commit
+  global $base_url;
+  // Get Site configurations.
+  $site_config = \Drupal::config('system.site');
   $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $paragraph = $variables['paragraph'];
+  if ($paragraph->getType() == 'hero_banner') {
+    // To process Logo.
+    $variables['theme_logo'] = [
+      'src' => $base_url . \Drupal::service('file_url_generator')->generateAbsoluteString(theme_get_setting('logo.url')),
+      'alt' => $site_config->get('name'),
+      'title' => $site_config->get('name'),
+      'link' => $base_url,
+    ];
+    if ($paragraph->hasField('field_hero_banner_title') &&!empty($paragraph->get('field_hero_banner_title')->first())) {
+      $variables['context']['banner']['title'] = $paragraph->get('field_hero_banner_title')->first()->get('value')->getString();
+    }
+    if ($paragraph->hasField('field_hero_banner_subtitle') &&!empty($paragraph->get('field_hero_banner_subtitle')->first())) {
+      $variables['context']['banner']['subtitle'] = $paragraph->get('field_hero_banner_subtitle')->first()->get('value')->getString();
+    }
+    if ($paragraph->hasField('field_hero_banner_cta') &&!empty($paragraph->get('field_hero_banner_cta')->first())) {
+      $variables['context']['banner']['cta']['title'] = $paragraph->field_hero_banner_cta->getValue()[0]['title'];
+      $variables['context']['banner']['cta']['uri'] = $url = Url::fromUri($paragraph->field_hero_banner_cta->getValue()[0]['uri'])->toString();
+    }
+    if ($paragraph->hasField('field_hero_banner_image') &&!empty($paragraph->get('field_hero_banner_image')->first())) {
+      // Load the file entity using the target_id.
+      $file = File::load($paragraph->field_hero_banner_image->getValue()[0]['target_id']);
+      if ($file) {
+        // Get the file URL.
+        $file_uri = $file->getFileUri();
+
+        // Convert the file URI to a URL.
+        $image_file_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file_uri);
+        $variables['context']['banner']['image']['uri'] = $image_file_url;
+        $variables['context']['banner']['image']['alt'] = $paragraph->field_hero_banner_image->getValue()[0]['alt'];
+      }
+    }
+    $menu_tree = \Drupal::menuTree();
+    $tree = $menu_tree->load('main', new MenuTreeParameters());
+    $manipulators = [
+      // Only show links that are accessible for the current user.
+      [
+        'callable' => 'menu.default_tree_manipulators:checkAccess',
+      ],
+      // Use the default sorting of menu links.
+      [
+        'callable' => 'menu.default_tree_manipulators:generateIndexAndSort',
+      ],
+    ];
+    $tree = $menu_tree->transform($tree, $manipulators);
+    // Build the menu render array.
+    $menu = $menu_tree->build($tree);
+    foreach ($menu['#items'] as $item) {
+      // dump($item);
+      // Check if the menu link is enabled.
+      $menu_link_content = MenuLinkContent::load($item['original_link']->getMetadata()['entity_id']); // Load the menu link content entity.
+      // Check if Link is Enabled.
+      if ($menu_link_content->status() == 'Enabled') {
+        
+        $link_title = !empty($item['title']) ? $item['title'] : '';
+        $url_obj = !empty($item['url']) ? $item['url'] : '';
+        $url_string = !empty($url_obj->toString()) ? $url_obj->toString() : '';
+        // $current_path = \Drupal::request()->getRequestUri();
+        // $entity = \Drupal::entityTypeManager()->getStorage('menu_link_content')->loadByProperties([
+        //   'uuid' => $item->link->getDerivativeId(),
+        // ]);
+        // foreach ($entity as $idMenu) {
+        // dump($idMenu);
+          // Get menu link attributes.
+          // $attributes = $menu_link->getOptions()['attributes'];
+          // dump($attributes);
+          $links[] = [
+            'label' => !empty($link_title) ? $link_title : '',
+            'title' => !empty($link_title) ? $link_title : '',
+            'href'  => !empty($url_string) ? $url_string : '',
+            // 'activeLink' => ($current_path == $url_string) ? 'activeLink' : ''
+          ];
+        // }
+      }
+    }
+    dump($links);
+    dump($variables);
+  }
 }
