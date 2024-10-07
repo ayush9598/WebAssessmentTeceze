@@ -1,0 +1,8 @@
+global:
+  version: VERSION
+  css:
+    theme:
+      assets/style.css: {}
+  js:
+    assets/main.js: {}
+

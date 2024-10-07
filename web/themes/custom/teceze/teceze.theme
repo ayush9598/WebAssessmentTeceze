@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Theme File.
+ */
+
+use Drupal\Core\Menu\MenuTreeParameters;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function optifast_preprocess_paragraph(&$variables)
+{
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $paragraph = $variables['paragraph'];
+}

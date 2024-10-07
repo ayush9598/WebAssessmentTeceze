@@ -1,0 +1,7 @@
+name: Teceze
+description: Teceze Theme
+type: theme
+core_version_requirement: ^9 || ^10
+base theme: classy
+libraries:
+  - teceze/global
