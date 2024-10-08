@@ -3,6 +3,10 @@ global:
   css:
     theme:
       assets/style.css: {}
+      assets/slick.css: {}
+      assets/slick-theme.css: {}
   js:
     assets/main.js: {}
+    assets/slick.js: {}
+    assets/slick.min.js: {}
 
