@@ -1,1 +1,23 @@
-
+<div class="hero-banner">
+    <div class="header">
+        <div class="theme_logo">
+            <image src={{ theme_logo.src }} alt={{ theme_logo.alt }} />
+        </div>
+        <div class="main-nav">
+            <ul>
+                {% for item in main_nav.links %}
+                    <li>
+                        <a href={{ item.href }} class={{ item.class }}>{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+			</ul>
+        </div>
+    </div>
+    <div class="banner-txt">
+        {{ context.banner.title|raw }}
+        <p class="subhead">{{ context.banner.subtitle }}</p>
+        <div class="banner-cta">
+            <a href={{ context.banner.cta.uri }}>{{ context.banner.cta.title }}</a>
+        </div>
+    </div>
+</div>

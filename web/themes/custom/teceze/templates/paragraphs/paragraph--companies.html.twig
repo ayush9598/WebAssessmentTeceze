@@ -1,0 +1,17 @@
+<div class="trusted-companies">
+    <div class="company-line-text">
+        <hr class="line">
+        <span class="companies-title">{{ context.companies.title }}</span>
+        <hr class="line">
+    </div>
+    <div class="companies-type">
+        <ul>
+            {% for item in context.companies.companies_type %}
+                <li>
+                    <img src={{ item.image.uri }} alt={{ item.image.alt }} />
+                    <p>{{ item.title }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

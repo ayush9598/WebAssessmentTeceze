@@ -1,0 +1,37 @@
+<div class="why-choose">
+    <div class="why-choose-container">
+        <div class="why-choose-line-text">
+            <span class="why-choose-title">{{ context.whychoose.title }}</span>
+            <hr class="line">
+        </div>
+        <div class="why-choose-item">
+            {% for item in context.whychoose.whychoose_items %}
+                <div class="why-choose-card {{ item.image.image_position }}">
+                    {% if item.image.image_position is defined and item.image.image_position == 'left' %}
+                        <div class="why-choose-image">
+                            <img src={{ item.image.uri }} alt={{ item.image.alt }}>
+                        </div>
+                        <div class="why-choose-card-text">
+                            <h2>{{ item.title }}</h2>
+                            <p>{{ item.description }}</p>
+                            <div class="cta">
+                                <a href={{ item.cta.uri }}>{{ item.cta.title }}</a>
+                            </div>
+                        </div>
+                    {% elseif item.image.image_position is defined and item.image.image_position is not null and item.image.image_position == 'right' %}
+                        <div class="why-choose-card-text">
+                            <h2>{{ item.title }}</h2>
+                            <p>{{ item.description }}</p>
+                            <div class="cta">
+                                <a href={{ item.cta.uri }}>{{ item.cta.title }}</a>
+                            </div>
+                        </div>
+                        <div class="why-choose-image">
+                            <img src={{ item.image.uri }} alt={{ item.image.alt }}>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

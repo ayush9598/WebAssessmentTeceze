@@ -1,3 +1,301 @@
+* {
+    box-sizing: border-box; /* Applies to all elements */
+}
+body{
+  padding:0;
+  background-color: black;
+}
 .content-header{
-    background-color: inherit;
+    display:none;
+}
+.page-content{
+  margin:0;
+}
+.layout-container{
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.hero-banner{
+  background-image: url("Images/Banner.png");
+  background-size: cover; /* This makes the background image cover the entire element */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  width: 100%;
+  height: 600px;
+  position: relative; /* Positioning context for content */
+  padding-top: 10px;
+  display: grid;
+  color: white;
+  text-align: center;
+}
+.theme_logo {
+  width: 20%;
+  float: left;
+}
+
+.main-nav {
+    width: 70%; /* Width of the right div */
+    float: right
+}
+.main-nav ul {
+    display: flex; /* Enable flexbox layout */
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+.main-nav li {
+    margin: 0 15px; /* Spacing between menu items */
+}
+.main-nav li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 14px 20px; /* Add padding for clickable area */
+    display: block; /* Make the entire area clickable */
+}
+.main-nav li a:hover {
+    background-color: #575757; /* Change background on hover */
+}
+.main-nav li a.get-started {
+    background-color: #adff33;
+    color: black;
+    padding: 6px;
+    margin-top: 8px;
+    border-radius: 4px;
+}
+.banner-txt h1{
+   font-size:68px;
+}
+.banner-txt p.subhead{
+   font-size: 11px;
+   width: 308px;
+   font-weight: 100;
+   margin:0 auto;
+}
+.banner-txt h1 .light-green{
+   color: #adff33;
+}
+.banner-txt .banner-cta {
+    background-color: #adff33;
+    margin-top: 8px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 32px;
+}
+.banner-txt .banner-cta a {
+    text-decoration: none;
+    color: black;
+}
+.trusted-companies{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    margin-top:20px;
+}
+.company-line-text{
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  justify-content: center;
+}
+.company-line-text .line {
+   flex-grow: 1;
+   border: none; /* Remove default border */
+   height: 1px; /* Line thickness */
+   background-color: #adff33; /* Line color */
+   flex: 0 0 5%;
+   margin: 0 10px; /* Space between lines and text */
+}
+.company-line-text .companies-title {
+   padding: 0 10px; /* Space around text */
+   white-space: nowrap; /* Prevents text wrapping */
+   font-size: 12px;
+}
+.companies-type {
+   background-color: rgb(48 44 44);
+   border-radius: 6px;
+}
+.trusted-companies .companies-type ul{
+   display: flex; /* Enable flexbox layout */
+   list-style-type: none; /* Remove default list styling */
+   margin: 0; /* Remove default margin */
+   padding: 0; /* Remove default padding */
+   justify-content:center;
+}
+.trusted-companies .companies-type li{
+   margin: 0 38px; /* Spacing between menu items */
+}
+.trusted-companies .companies-type li a{
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 14px 20px; /* Add padding for clickable area */
+    display: block; /* Make the entire area clickable */
+}
+.trusted-companies .companies-type li img{
+   float:left;
+   width:35px;
+   height:35px;
+   margin-top: 10px;
+   margin-right: 15px;
+}
+.trusted-companies .companies-type li p{
+   float:right;
+}
+.services{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  margin: 70px;
+}
+.services h3 {
+  font-size: 30px;
+  font-weight: 500;
+} 
+.services .services-subtitle{
+  font-size: 12px;
+}
+.services-type {
+   margin-top: 50px;
+}
+.services .services-type ul{
+   display: flex; /* Enable flexbox layout */
+   flex-wrap: wrap;
+   list-style-type: none; /* Remove default list styling */
+   margin: 0; /* Remove default margin */
+   padding: 0; /* Remove default padding */
+   justify-content:center;
+}
+.services .services-type ul li {
+   margin: 15px; /* Spacing between menu items */
+   background-color: #adff33;
+   flex: 0 0 300px;
+   border-radius: 10px;
+}
+.services .services-type ul li a{
+    color: black; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    padding: 14px 20px; /* Add padding for clickable area */
+    display: block; /* Make the entire area clickable */
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 68px;
+}
+.services .services-type ul li a img{
+    width:70px;
+    height:65px;
+}
+.why-choose{
+    background-color: rgb(48 44 44);
+}
+.why-choose-container{
+    width:90%;
+    margin: 0 auto;
+    color: white;
+    padding: 10px 0px 50px 0px;
+}
+.why-choose-line-text{
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.why-choose-line-text .line {
+   flex-grow: 1;
+   border: none; /* Remove default border */
+   height: 1px; /* Line thickness */
+   border-top: 2px solid white;
+   flex: 0 0 12%;
+   margin: 4px 10px 0px 0px; /* Space between lines and text */
+}
+.why-choose-line-text .why-choose-title {
+   padding: 0 10px; /* Space around text */
+   white-space: nowrap; /* Prevents text wrapping */
+   font-size: 30px;
+   font-weight: 500;
+}
+.why-choose .why-choose-item .why-choose-card {
+    display:flex;
+    padding-top:50px;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-image{
+  width: 50%;
+  float: left;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-image img{
+    width: 500px;
+    height: 350px;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-image img{
+    width: 500px;
+    height: 340px;
+    float:right;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-card-text{
+  width: 50%;
+  float: right;
+}
+.why-choose .why-choose-item .why-choose-card .why-choose-card-text h2{
+    margin: 0;
+    font-size: 45px;
+}
+.why-choose .why-choose-item .why-choose-card .why-choose-card-text p{
+    width:295px;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-image{
+  width: 50%;
+  float: left;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-card-text{
+  width: 50%;
+  float: right;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-card-text{
+  width: 50%;
+  float: left;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-image{
+  width: 50%;
+  float: right;
+}
+.why-choose .why-choose-item .why-choose-card .cta {
+    background-color: #adff33;
+    padding: 8px 20px;
+    border-radius: 10px;
+    width: fit-content;
+}
+.why-choose .why-choose-item .why-choose-card .cta a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+}
+.about-us{
+    padding-top: 40px;
+}
+.about-us .about-us-title {
+    color: white;
+    text-align: center;
+}
+.about-us .about-us-type {
+   color: white;
+   text-align: center;
+}
+.about-us .about-us-type ul{
+   display: flex; /* Enable flexbox layout */
+   list-style-type: none; /* Remove default list styling */
+   justify-content:center;
+}
+.about-us .about-us-type li{
+   list-style-type: none; /* Remove default list styling */
+   margin: 50px 120px;
+   justify-content:center;
+}
+.about-us .about-us-type li img{
+   width: 100px;
+   height: 100px;
+}
+.about-us .about-us-type li h3,.about-us .about-us-type li p{
+   margin:0;
 }

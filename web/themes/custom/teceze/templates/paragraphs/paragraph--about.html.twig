@@ -1,0 +1,14 @@
+<div class="about-us">
+    <h3 class="about-us-title">{{ context.aboutus.title }}</h3>
+    <div class="about-us-type">
+        <ul>
+            {% for item in context.aboutus.aboutus_items %}
+                <li>
+                    <img src={{ item.image.uri }} alt={{ item.image.alt }}>
+                    <h3>{{ item.quantity }}</h3>
+                    <p>{{ item.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="services">
+    <h3 class="services-title">{{ context.services.title }}</h3>
+    <span class="services-subtitle">{{ context.services.subtitle }}</span>
+    <div class="services-type">
+        <ul>
+            {% for item in context.services.services_type %}
+                <li>
+                    <a href={{ item.cta.uri }}>
+                        <img src={{ item.image.uri }} alt={{ item.image.alt }} />
+                        <p>{{ item.title }}</p>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
