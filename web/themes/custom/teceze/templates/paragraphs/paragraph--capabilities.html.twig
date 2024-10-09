@@ -1,1 +1,9 @@
-hjhk
+<div class="capabilities">
+    <p class="capability-subhead">{{ context.capabilities.subheading }}</p>
+    <h2>{{ context.capabilities.heading }}</h2>
+    <div class="capability-types">
+        {% for item in context.capabilities.capability_items %}
+            <div class="capability-term">{{ item.term }}</div>
+        {% endfor %}
+    </div>
+</div>

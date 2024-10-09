@@ -367,4 +367,63 @@ function teceze_preprocess_paragraph(&$variables) {
       $variables['context']['benefits']['benefits_items'] = $benefits_items;
     }
   }
+  if ($paragraph->getType() == 'pricing') {
+    if ($paragraph->hasField('field_tag') && !empty($paragraph->get('field_tag')->first())) {
+      $variables['context']['pricing']['tag'] = $paragraph->field_tag->getValue()[0]['value'];
+    }
+    if ($paragraph->hasField('field_title') && !empty($paragraph->get('field_title')->first())) {
+      $variables['context']['pricing']['title'] = $paragraph->field_title->getValue()[0]['value'];
+    }
+    if ($paragraph->hasField('field_subtitle') && !empty($paragraph->get('field_subtitle')->first())) {
+      $variables['context']['pricing']['subtitle'] = $paragraph->field_subtitle->getValue()[0]['value'];
+    }
+    if ($paragraph->hasField('field_plans') && !empty($paragraph->get('field_plans')->first())) {
+      $plans = $paragraph->field_plans->getValue();
+      foreach ($plans as $item) {
+        $pricing_plan_type = '';
+        $plans_term = Term::load($item['target_id']);
+        if ($plans_term->hasField('field_plan_type') && !empty($plans_term->get('field_plan_type')->first())) {
+          $pricing_plan_type = $plans_term->field_plan_type->getValue()[0]['value'];
+        }
+        if ($plans_term->hasField('field_is_popular') && !empty($plans_term->get('field_is_popular')->first())) {
+          $plan_is_popular = $plans_term->field_is_popular->getValue()[0]['value'];
+        }
+        if ($plans_term->hasField('field_price') && !empty($plans_term->get('field_price')->first())) {
+          $pricing = $plans_term->field_price->getValue()[0]['value'];
+        }
+        if ($plans_term->hasField('field_price_description') && !empty($plans_term->get('field_price_description')->first())) {
+          $pricing_description = $plans_term->field_price_description->getValue()[0]['value'];
+        }
+        if ($plans_term->hasField('field_plan_detail') && !empty($plans_term->get('field_plan_detail')->first())) {
+          $pricing_plan_detail = $plans_term->field_plan_detail->getValue()[0]['value'];
+        }
+        if ($plans_term->hasField('field_call_cta') &&!empty($plans_term->get('field_call_cta')->first())) {
+          $call_cta_title = $plans_term->field_call_cta->getValue()[0]['title'];
+          $call_cta_uri = $url = Url::fromUri($plans_term->field_call_cta->getValue()[0]['uri'])->toString();
+        }
+        if ($plans_term->hasField('field_buy_now_cta') &&!empty($plans_term->get('field_buy_now_cta')->first())) {
+          $buy_now_cta_title = $plans_term->field_buy_now_cta->getValue()[0]['title'];
+          $buy_now_cta_uri = $url = Url::fromUri($plans_term->field_buy_now_cta->getValue()[0]['uri'])->toString();
+        }
+        $plans_detail[] = [
+          'name' => !empty($plans_term->getName()) ? $plans_term->getName() : '',
+          'description' => !empty($plans_term->getDescription()) ? $plans_term->getDescription() : '',
+          'plan_type' => !empty($pricing_plan_type) ? $pricing_plan_type : '',
+          'plan_type_class' => ($plan_is_popular == 1) ? 'popular-plan' : '',
+          'pricing' => !empty($pricing) ? $pricing : '',
+          'pricing_description' => !empty($pricing_description) ? $pricing_description : '',
+          'pricing_plan_detail' => !empty($pricing_plan_detail) ? $pricing_plan_detail : '',
+          'call_cta' => [
+            'title' => !empty($call_cta_title) ? $call_cta_title : '',
+            'uri' => !empty($call_cta_uri) ? $call_cta_uri : ''
+          ],
+          'buy_now_cta' => [
+            'title' => !empty($buy_now_cta_title) ? $buy_now_cta_title : '',
+            'uri' => !empty($buy_now_cta_uri) ? $buy_now_cta_uri : ''
+          ]
+        ];
+      }
+      $variables['context']['pricing']['plans'] = $plans_detail;
+    }
+  }
 }

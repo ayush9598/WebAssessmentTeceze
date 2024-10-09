@@ -5,6 +5,7 @@ global:
       assets/style.css: {}
       assets/slick.css: {}
       assets/slick-theme.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css: {}
   js:
     assets/main.js: {}
     assets/slick.js: {}

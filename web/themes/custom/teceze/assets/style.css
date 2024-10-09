@@ -299,3 +299,298 @@ body{
 .about-us .about-us-type li h3,.about-us .about-us-type li p{
    margin:0;
 }
+.testimonial {
+   background-color:white;
+   text-align: center;
+   padding: 50px;
+}
+.testimonial .tag {
+   font-size: 12px;
+}
+.testimonial h2 {
+   font-size: 30px;
+   width: 300px;
+   margin: 0 auto;
+}
+.testimonial p.test-subhead {
+   font-size: 10px;
+   width: 260px;
+   margin: 0 auto;
+}
+.testimonial-items-slider {
+   margin: 40px;
+}
+.testimonial-item {
+   display: flex;
+   padding-left: 118px;
+}
+.testimonial-item .text-left {
+   width: 50%;
+   float: left;
+   text-align: justify;
+}
+.testimonial-item .photo-right {
+   width: 50%;
+   float: left;
+   display: flex;
+   justify-content: center;
+}
+.testimonial-item .text-left .logo {
+   width: 100px;
+   margin-left: 10px;
+}
+.testimonial-item .text-left .logo img {
+   width:100px;
+   height:38px;
+}
+.testimonial-item .text-left p {
+   font-size: 14px;
+   margin: 0;
+}
+.testimonial-item .text-left h3 {
+   font-size: 22px;
+ }
+.testimonial-item .text-left .name h4 {
+   margin-bottom: 0;
+}
+.testimonial-item .photo-right img {
+   width: 300px;
+   height: 300px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+.testimonial-items-slider .fa-angle-left.slick-arrow {
+    float: left;
+    margin-right: 40px;
+    margin-top: 120px;
+}
+.testimonial-items-slider .fa-angle-right.slick-arrow {
+    float: right;
+    margin-top: -242px;
+}
+.slick-list {
+   width:90%;
+    background-color: #fcfcfc;
+    border: 2px solid #f3f6f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px !important;
+    margin: 20px !important;
+    border-radius: 20px;
+}
+.capabilities {
+   text-align:center;
+   padding: 100px 0px;
+   width: 90%;
+   margin: 0 auto;
+}
+.capabilities .capability-subhead {
+   color: #adff33;
+}
+.capabilities h2 {
+   color: white;
+}
+.capabilities .capability-types .capability-term {
+    background-color: #adff33;
+    display: inline-block;
+    width: auto;
+    padding: 10px 25px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 4px;   
+}
+.capability-types {
+   margin-top: 35px;
+}
+.benefits {
+    width: 90%;
+    margin: 0 auto;
+}
+.benefits .tag {
+   color: #adff33;
+   margin:0;
+}
+.benefits-head-left {
+  width:50%;
+  float:left;
+  color:white;
+}
+.benefits-head-right {
+  width:50%;
+  float:left;
+  width: 50%;
+  float: left;
+  color: #bfbdbd;
+  font-size: 12px;
+}
+.benefits-head {
+   display:flex;
+}
+
+.benefits-head-right .cta {
+    background-color: #adff33;
+    padding: 4px 10px;
+    border-radius: 3px;
+    width: fit-content;
+}
+.benefits-head-right .cta a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: 500;
+}
+.benefits-types {
+   margin-top: 70px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   gap: 10px;
+}
+.benefits-types .benfits-card {
+  padding: 20px;
+}
+.benefits-types .benfits-card h4 {
+   color:white;
+   font-size:18px;
+   margin:0;
+}
+.benefits-types .benfits-card p {
+   color: #bfbdbd;
+   font-size:12px;
+   margin:10px;
+}
+/* Apply borders only to middle grid items (items 2, 4, 5, 6, and 8) */
+.benefits-types .benfits-card:nth-child(1),
+.benefits-types .benfits-card:nth-child(2),
+.benefits-types .benfits-card:nth-child(4),
+.benefits-types .benfits-card:nth-child(5),
+.benefits-types .benfits-card:nth-child(7),
+.benefits-types .benfits-card:nth-child(8) {
+  border-right: 1px solid #343436;
+}
+.benefits-types .benfits-card:nth-child(1),
+.benefits-types .benfits-card:nth-child(2),
+.benefits-types .benfits-card:nth-child(3),
+.benefits-types .benfits-card:nth-child(4),
+.benefits-types .benfits-card:nth-child(5),
+.benefits-types .benfits-card:nth-child(6) {
+  border-bottom: 1px solid #343436;
+}
+.pricing {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 80px;
+}
+.pricing .tag {
+    color: #adff33;
+    margin:0;
+}
+.pricing h2 {
+    margin: 0;
+    color: white;
+}
+.pricing .pricing-subtitle {
+    color: #bfbdbd;
+    width: 337px;
+    margin: 12px auto;
+    font-size: 12px;
+}
+.pricing .plans {
+    display:flex;
+    margin-top: 80px;
+}
+.pricing .plans .plan-card {
+    border: 1px solid #2f3328;
+    border-radius: 10px;
+    background-color: #22251d;
+    margin: 0px 10px;
+    width: 100%;
+    padding:10px;
+}
+.plan-head {
+    display:flex;
+    margin-left: 50px;
+}
+.pricing .plans .plan-card .plan-name {
+    color:white;
+}
+.pricing .plans .plan-card .plan-type {
+    margin: 15px 0px 0px 40px;
+    background-color: #bfbdbd;
+    padding: 2px 15px;
+    font-size: 13px;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 35px;
+}
+.pricing .plans .plan-card .plan-type.popular-plan {
+    background-color: #adff33;
+}
+.pricing .plans .plan-card .plan-desc {
+    color: white;
+    font-size: 10px;
+    width: 258px;
+    margin: 0 auto;
+    text-align: left;
+}
+.pricing .plans .plan-card .price {
+    color:#adff33;
+    font-size: 35px;
+    text-align: left;
+    margin-left: 50px;
+}
+.pricing .plans .plan-card .price-desc {
+    margin: 0;
+    color: white;
+    font-size: 10px;
+    text-align: left;
+    margin-left: 50px;
+}
+.pricing .plans .plan-card hr.line {
+    background-color: #adff33;
+}
+.pricing .plans .plan-card ul {
+    color: white;
+    text-align: left;s
+    margin-left: 50px;
+    list-style-image: url("Images/star-list.png");
+    list-style-type: square;
+    font-weight: 100;
+}
+.pricing .plans .plan-card .call_cta {
+    border: 1px solid #adff33;
+    padding: 8px 0px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.pricing .plans .plan-card .call_cta a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 500; 
+}
+.pricing .plans .plan-card .buy_now_cta {
+    background-color: #adff33;
+    padding: 8px 0px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.pricing .plans .plan-card .buy_now_cta a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: 500; 
+}
+
+
+

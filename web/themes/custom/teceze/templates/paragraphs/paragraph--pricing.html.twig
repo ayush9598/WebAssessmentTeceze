@@ -1,0 +1,29 @@
+<div class="pricing">
+    <p class="tag">{{ context.pricing.tag }}</p>
+    <h2>{{ context.pricing.title }}</h2>
+    <p class="pricing-subtitle">{{ context.pricing.subtitle }}</p>
+    <div class="plans">
+        {% for item in context.pricing.plans %}
+            <div class="plan-card">
+                <div class="plan-head">
+                    <h4 class="plan-name">{{ item.name }}</h4>
+                    {% if item.plan_type is not empty %}
+                        <span class="plan-type{% if item.plan_type_class is not null %} {{ item.plan_type_class }}{% endif %}">{{ item.plan_type }}</span>
+                    {% endif %}
+                </div>
+                {{ item.description | raw }}
+                <hr class="line" />
+                <h4 class="price">{{ item.pricing }}</h4>
+                <p class="price-desc">{{ item.pricing_description }}</p>
+                <hr class="line" />
+                {{ item.pricing_plan_detail|raw }}
+                <div class="call_cta">
+                    <a href={{ item.call_cta.uri }}>{{ item.call_cta.title }}</a>
+                </div>
+                <div class="buy_now_cta">
+                    <a href={{ item.buy_now_cta.uri }}>{{ item.buy_now_cta.title }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

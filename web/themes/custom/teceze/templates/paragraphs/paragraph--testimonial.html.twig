@@ -1,0 +1,32 @@
+<div class="testimonial">
+    <span class="tag">{{ context.testimonial.tag }}</span>
+    <h2>{{ context.testimonial.heading }}</h2>
+    <p class="test-subhead">{{ context.testimonial.subheading }}</p>
+    <!-- Slider container -->
+  <div class="testimonial-items-slider">
+    {% for item in context.testimonial.testimonial_items %}
+        <div class="testimonial-item">
+            <div class="text-left">
+                <div class="logo">
+                    <img src={{ item.logo.uri }} alt={{ item.logo.alt }}>
+                </div>
+                <div class="title">
+                    <h3>{{ item.title }}</h3>
+                </div>
+                <div class="description">
+                    <p>{{ item.description|raw }}</p>
+                </div>
+                <div class="name">
+                    <h4>{{ item.name }}</h4>
+                </div>
+                <div class="designation">
+                    <p>{{ item.designation|raw }}</p>
+                </div>
+            </div>
+            <div class="photo-right">
+                <img src={{ item.photograph.uri }} alt={{ item.photograph.alt }}>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>

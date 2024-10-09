@@ -1,1 +1,23 @@
-kjhkk
+<div class="benefits">
+    <p class="tag">{{ context.benefits.tag }}</p>
+    <div class="benefits-head">
+        <div class="benefits-head-left">
+            <h2>{{ context.benefits.title }}</h2>
+        </div>
+        <div class="benefits-head-right">
+            <p class="benefits-subtitle">{{ context.benefits.subtitle }}</p>
+            <div class="cta">
+                <a href={{ context.benefits.cta.uri }}>{{ context.benefits.cta.title }}</a>
+            </div>
+        </div>
+    </div>
+    <div class="benefits-types">
+        {% for key,item in context.benefits.benefits_items %}
+            <div class="benfits-card">
+                <img src={{ item.logo.uri }} alt={{ item.logo.alt }} />
+                <h4>{{ key + 1 }}. {{ item.title }}</h4>
+                <p>{{ item.subtitle }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
