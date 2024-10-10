@@ -480,6 +480,7 @@ body{
     margin: 0 auto;
     text-align: center;
     margin-top: 80px;
+    margin-bottom: 100px;
 }
 .pricing .tag {
     color: #adff33;
@@ -584,6 +585,7 @@ body{
     width: 250px;
     margin: 0 auto;
     margin-top: 10px;
+    margin-bottom: 35px;
 }
 .pricing .plans .plan-card .buy_now_cta a {
     text-decoration: none;
@@ -591,6 +593,215 @@ body{
     font-size: 12px;
     font-weight: 500; 
 }
+.block-views-blocknews-articles-block-1 {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+.block-views-blocknews-articles-block-1 .view-header .news-head .tag {
+    color: #adff33;
+    margin:0;
+}
+.block-views-blocknews-articles-block-1 .view-header .news-head h2.news-title {
+    margin: 0;
+    color: white;
+}
+.block-views-blocknews-articles-block-1 .view-header .news-head .subtitle {
+    color: #bfbdbd;
+    width: 337px;
+    margin: 12px auto;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 50px;    
+}
+.block-views-blocknews-articles-block-1 .view-content .field-content a {
+    text-decoration:none;
+}
+.news-card {
+    display: flex;
+    border: 1px solid #2f3328;
+    margin: 10px;
+}
+.news-card .news-img {
+    margin-right: 10px;
+}
+.news-card .news-text {
+    padding: 10px;
+}
+.news-card .news-text .tag {
+    text-align:left;
+    color: #adff33;
+    margin:0;
+}
+.news-card .news-text .news-title {
+    color: white;
+    text-align: left;
+    margin: 0;    
+}
+.news-card .news-text .news-description {
+    color: white;
+    text-align: left;
+    font-size: 10px;    
+}
+.news-card .news-img {
+    height: 176px;   
+}
+.news-card .news-img img {
+   height: 175px;
+   width: 250px; 
+}
+.news-article ul.js-pager__items li a.button {
+    border: 1px solid #679919;
+    background: transparent;
+    color: #679919;
+    border-radius: 10px;
+}
+.std-back {
+    background-color: #adff33;
+    position: relative;
+    width: 100vw;
+    height: 350px;
+    text-align: center;
+}
+.std-back .stand-out {
+    background-color: #22251d;
+    width: 80%;
+    position: absolute;
+    margin: 150px 100px 0px 100px;
+    border-radius: 20px;
+    padding: 25px 25px 75px 25px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.std-back .stand-out h2.heading {
+    color: white;
+    font-size: 35px;
+    width: 500px;
+}
+.std-back .stand-out .name-designation {
+    color: white;
+    margin: 0;
+    font-size: 15px;
+}
+.std-back .stand-out .description {
+    color: white;
+    margin: 0;
+    font-size: 12px;
+}
+.std-back .stand-out .cta {
+    margin-top: 30px;
+    background-color: #adff33;
+    display: flex;
+    border-radius: 6px;
+    width: 150px;
+    align-items: center;
+}
+.std-back .stand-out .cta p {
+    margin:0;
+    width: 700px;
+}
+.std-back .stand-out .cta a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.circle {
+    background-image: url(Images/arrow.png);
+    width: 100%;
+    background-size: 330% 260%;
+    padding: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(2);
+    margin-top: 34px;    
+}
+.footer {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 225px;
+    margin-bottom: 40px;
+}
+.footer .footer-details {
+    display:flex;
+}
+.footer .footer-details .about-company {
+    width: 40%;
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+}
+.footer .footer-details .services-company {
+    width:25%;
+}
+.footer .footer-details .services-company h3 {
+    color: #adff33;
+}
+.footer .footer-details .services-company ul {
+    list-style-type:none;
+    color:white;
+    font-size:14px;
+}
+.footer .footer-details .services-company ul li {
+    margin-top:22px;
+}
+.footer .footer-details .location-company {
+    width:25%;
+}
+.footer .footer-details .location-company h3 {
+    color: #adff33;
+}
+.footer .footer-details .location-company ul {
+    list-style-type:none;
+    color:white;
+    font-size:14px;
+}
+.footer .footer-details .location-company ul li {
+    margin-top:22px;
+}
+.footer .footer-details .contactus-company {
+    width:25%;
+}
+.footer .footer-details .contactus-company h3 {
+    color: #adff33;
+}
+.footer .footer-details .contactus-company .contact-info {
+    margin-top:80px;
+}
+.footer .footer-details .contactus-company .contact-info p {
+    color:white;
+}
+.footer .footer-details .contactus-company .contact-info p img {
+    width:20px;
+}
+.footer .footer-details .contactus-company .contact-info a {
+    margin:10px;
+}
+.footer-second {
+    display:flex;
+}
+.footer-second .footer-menu {
+    width: 100%;
+    float:left;
+}
+.footer-second .footer-menu a {
+    text-decoration:none;
+    color:white;
+    margin:10px;
+}
+.footer-second .copyright {
+    width:40%;
+    float:right;
+    color:white;
+    font-size:14px;
+}
+
+
+
 
 
 
