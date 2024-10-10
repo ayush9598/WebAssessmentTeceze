@@ -4,7 +4,13 @@
             <image src={{ theme_logo.src }} alt={{ theme_logo.alt }} />
         </div>
         <div class="main-nav">
-            <ul>
+             <!-- Burger Menu Icon -->
+            <div class="menu-icon" id="menu-icon">
+                <span class="hm-item"></span>
+                <span class="hm-item"></span>
+                <span class="hm-item"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 {% for item in main_nav.links %}
                     <li>
                         <a href={{ item.href }} class={{ item.class }}>{{ item.title }}</a>

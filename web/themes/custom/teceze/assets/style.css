@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box; /* Applies to all elements */
 }
-body{
+body.path-frontpage{
   padding:0;
   background-color: black;
 }
@@ -15,9 +15,12 @@ body{
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
+.capability-divider {
+    display:none;
+}
 .hero-banner{
   background-image: url("Images/Banner.png");
-  background-size: cover; /* This makes the background image cover the entire element */
+  background-size: 100% 100%; /* This makes the background image cover the entire element */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-position: center; /* Centers the image */
   width: 100%;
@@ -35,7 +38,8 @@ body{
 
 .main-nav {
     width: 70%; /* Width of the right div */
-    float: right
+    float: right;
+    position: relative;
 }
 .main-nav ul {
     display: flex; /* Enable flexbox layout */
@@ -800,8 +804,255 @@ body{
     font-size:14px;
 }
 
+/* Styling the burger menu icon (hidden by default) */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20px;
+  position: relative; /* Normal state */
+  z-index: 1001;
+  margin-right: -180px;
+}
 
+.menu-icon span {
+  background-color: #adff33;
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+}
+#block-teceze-content{
+width:100%;
+}
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  #block-teceze-content{
+    width:100%;
+}
+.banner-txt h1 {
+    font-size: 35px;
+}
+  /* Hide the navigation links initially */
+  .main-nav .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+  }
 
+  /* Show the navigation links when .active is added */
+  .main-nav .nav-links.active {
+    display: flex;
+    position: fixed;
+  }
 
+  /* Show the burger menu icon */
+  .main-nav .menu-icon {
+    display: flex;
+    float: right;
+    margin-right: 25px;
+  }
 
+  /* Style the navigation links for mobile */
+  .main-nav ul li a {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+  }
+  .trusted-companies .companies-type li {
+    margin: 0 38px;
+    width: 130px;
+  }
+.trusted-companies .companies-type li img {
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+    margin-right: 0;
+}
+.trusted-companies .companies-type ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's width/height */
+}
+/* Ensure the body doesn't scroll horizontally */
+html, body {
+  overflow-x: hidden;
+  width:100%;
+}
+.services {
+    width: 65%;
+}
+.why-choose .why-choose-item .why-choose-card {
+    display: inline;
+    padding-top: 0;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-image {
+    width: 100%;
+    float: inherit;
+}
+.why-choose .why-choose-item .why-choose-card.left .why-choose-card-text {
+    width: 100%;
+    float: inherit;
+}
+.why-choose .why-choose-item .why-choose-card .why-choose-card-text h2 {
+    font-size: 30px;
+}
+.why-choose {
+    background-color: white;
+    text-align: center;
+}
+.why-choose-container {
+    color: black;
+}
+.why-choose .why-choose-item .why-choose-card .cta {
+    background-color: #3d6305;
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+.why-choose .why-choose-item .why-choose-card .cta a {
+    color: white;
+}
+.why-choose-line-text .line {
+    flex-grow: 1;
+    border: none;
+    border-top: 2px solid #232020;
+    flex: 1 0 12%;
+    margin: 42px 15px 0px -235px;
+    width: 24px;
+}
+.why-choose-card.right {
+    display: flex !important;
+    flex-direction: column-reverse;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-card-text {
+    width: 100%;
+    float: left;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-image {
+    width: 100%;
+    float: right;
+}
+.about-us .about-us-type ul {
+    display: inline;
+}
+.testimonial {
+display:none;
+}
+.capability-divider {
+    display:block;
+    background-color:#adff33;
+    width: 90%;
+    margin: 0 auto;
+}
+.capabilities {
+    padding: 10px 0px;
+}
+.benefits {
+display:none;
+}
+.pricing {
+     margin-top: 47px;
+     background-color: white;
+     width: 100%;
+     padding-top: 30px;
+     margin-bottom: 0px;
+}
+.pricing .tag, .pricing .pricing-subtitle,.pricing h2,.pricing .pricing-subtitle {
+    color: black;
+}
+.pricing .plans .plan-card .plan-desc {
+    width: 194px;
+    margin: inherit;
+}
+.pricing .plans {
+    margin-top: 45px;
+}
+.pricing .plans .plan-card .price {
+    margin-left: 28px;
+}
+.pricing .plans .plan-card .call_cta,.pricing .plans .plan-card .buy_now_cta {
+    width: 210px;
+}
+.plan-head {
+    margin: 0;
+}
+.plans .fa-solid, .fas {
+    margin-top: 200px;
+    color: #adff33;
+    font-size: 30px;
+}
+.block-views-blocknews-articles-block-1 {
+display:none;
+}
+.std-back .stand-out {
+    width: 90%;
+    margin: 40px 0px 0px 21px;
+    padding: 25px 25px 32px 25px;
+ }
+.std-back .stand-out h2.heading {
+    color: white;
+    font-size: 29px;
+    width: revert;
+}
+.footer {
+    width: 90%;
+    margin-top: 94px;
+    margin-bottom: 90px;
+}
+.footer-details {
+display: inline !important;
+}
+.footer .footer-details .about-company {
+    width: 100%;
+    font-size: 14px;
+}
+.footer .footer-details .services-company,.footer .footer-details .location-company,.footer .footer-details .contactus-company {
+    width: 100%;
+    margin-top: 32px;
+} 
+.footer .footer-details .contactus-company .contact-info {
+    margin-top: 0px;
+}
+.footer-second {
+    font-size: 12px;
+}
+.footer-second .copyright {
+    font-size: 12px;
+    width: 56%;
+}
+.why-choose .why-choose-item .why-choose-card .why-choose-card-text p {
+    width: 64%;
+    margin: 0 auto;
+    margin-bottom: 23px;
+}
+.why-choose .why-choose-item .why-choose-card.right .why-choose-image img {
+    float: initial;
+}
+}
+/* Hide the scrollbar and prevent scrolling when .no-scroll is active */
+.no-scroll {
+  overflow: hidden;
+  position: fixed; /* Prevents content from moving */
+  width: 100%;     /* Ensures body takes the full width */
+  height: 100%;    /* Prevents vertical scrolling */
+}
 
+@media screen and (max-width: 1047px) {
+
+.main-nav li {
+    margin: 0;
+    font-size: 10px;
+}
+}
